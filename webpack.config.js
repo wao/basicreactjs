@@ -1,12 +1,15 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
+// const htmlPlugin = new HtmlWebPackPlugin({
+  // template: "./public/index.html",
+  // filename: "./index.html"
+// });
 
 module.exports = {
+    entry: {
+        app: "./src/index.js",
+    },
     resolve: {
         modules: [ "src/lib", "src", "src/app", "node_modules" ],
     },
@@ -40,7 +43,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [htmlPlugin],
+    // plugins: [htmlPlugin],
     devServer: {
         contentBase: "./public",
         port: 8092,
